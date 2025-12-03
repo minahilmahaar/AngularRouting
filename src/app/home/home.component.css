@@ -54,9 +54,14 @@
 .search-bar button:hover {
   background-color: #e64a19;
 }
+.customer{
+  background-color: #1e1e1e;
+}
 .customer h1{
   text-align: center;
   padding-top: 40px;
+  color: #ccc;
+
 }
 .person-grid {
   display: grid;
@@ -79,31 +84,32 @@
   font-size: 18px;
   margin: 0; 
   font-weight: 600;
+  color: #ccc;
 }
 
 .person-item .role {
   font-size: 14px;
-  color: black;
+  color: #ccc;
   font-weight: 700;
   margin: 3px 0 8px;
 }
 
 .person-item .desc {
   font-size: 13px;
-  color: black;
+  color: white;
   font-weight: bold;
 
   line-height: 1.4;
 }
 
 .popular{
-    background-color: #1e1e1e;;
+    background-color: white;
 }
 
 
 .card3{
     text-align: center;
-    color: white;
+    color: black;
     padding: 35px;
     margin-bottom: 20px;
 
