@@ -3,7 +3,7 @@ import { provideRouter, Routes } from '@angular/router';
 import { AppComponent } from './app/app.component';
 
 const routes: Routes = [
-  {
+     {
     path: '',
     loadComponent: () =>
       import('./app/home/home.component').then(m => m.HomeComponent),
@@ -13,6 +13,7 @@ const routes: Routes = [
     loadComponent: () =>
       import('./app/about/about.component').then(m => m.AboutComponent),
   },
+
   {
     path: 'contact',
     loadComponent: () =>
