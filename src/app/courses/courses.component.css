@@ -1,16 +1,16 @@
 .banner {
     width: 80%;
-    height: 300px; /* moderate height */
-    margin: 20px auto; /* center horizontally with some margin top/bottom */
+    height: 300px; 
+    margin: 20px auto; 
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     overflow: hidden;
-    border-radius: 15px; /* thodi rounded corners */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* subtle shadow */
-    background-color: #000; /* fallback color */
+    border-radius: 15px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    background-color: #000; 
 }
 
 .banner img {
@@ -54,9 +54,12 @@
 
     .course-card img {
         width: 100%;
-        height: 150px;
+        height: 150px; 
         object-fit: cover;
     }
+.course-page{
+    text-align: center;
+}
 
     .course-card .card-content {
         padding: 15px;

@@ -1,0 +1,127 @@
+<div class="course-banner">
+  <div class="course-wrapper">
+
+ 
+    <div class="left-section">
+      <div class="image-box">
+        <img [src]="courseData.img" alt="Course Image">
+      </div>
+
+      <div class="details-box">
+        <h1>{{ courseData.title }}</h1>
+
+        <div class="course-info">
+          <p><span>Duration:</span> {{ courseData.duration }}</p>
+          <p><span>Lessons:</span> {{ courseData.lessons }}+</p>
+        </div>
+
+        <h2>About This Course</h2>
+        <p>{{ courseData.description }}</p>
+
+        <h2>What You Will Learn</h2>
+        <ul>
+          <li>Basics to Advanced Concepts</li>
+          <li>Hands-on Real Projects</li>
+          <li>Industry-Level Training</li>
+          <li>Certificate After Completion</li>
+        </ul>
+      </div>
+    </div>
+
+  
+    <div class="right-section">
+      <div class="offer-box">
+<h1>Get Flat 80% OFF on this course</h1>
+      </div>
+ <div class="tabs">
+    <button 
+      [ngClass]="{'active-tab': selectedTab === 'personal'}" 
+      (click)="selectTab('personal')">
+      Personal
+    </button>
+    <button 
+      [ngClass]="{'active-tab': selectedTab === 'team'}" 
+      (click)="selectTab('team')">
+      Team
+    </button>
+    <div class="underline" [ngStyle]="{'transform': selectedTab === 'personal' ? 'translateX(0%)' : 'translateX(100%)'}"></div>
+  </div>
+  <div class="tab-content">
+    <p *ngIf="selectedTab === 'personal'">Personal plan details here.</p>
+    <p *ngIf="selectedTab === 'team'">Team plan details here.</p>
+  </div>
+ 
+      <div class="price-box">
+        <p><span>Original Price:</span> ${{ courseData.price }}</p>
+        <p><span>Discount Price:</span> ${{ courseData.discount }}</p>
+      </div>
+
+      <button class="buy-btn">BUY NOW</button>
+       <div class="Money-content">
+    <h6>30-Day Money-Back <br> Gaurented full Lifetime Access</h6>
+  </div>
+    </div>
+
+  </div>
+  
+</div>
+<!--<div class="course-wrapper">
+
+  
+  <div class="left-section">
+    <div class="image-box">
+      <img [src]="courseData.img" alt="Course Image">
+    </div>
+
+    <div class="details-box">
+      <h1>{{ courseData.title }}</h1>
+
+      <div class="course-info">
+        <p><span>Duration:</span> {{ courseData.duration }}</p>
+        <p><span>Lessons:</span> {{ courseData.lessons }}+</p>
+      </div>
+
+      <h2>About This Course</h2>
+      <p>{{ courseData.description }}</p>
+
+      <h2>What You Will Learn</h2>
+      <ul>
+        <li>Basics to Advanced Concepts</li>
+        <li>Hands-on Real Projects</li>
+        <li>Industry-Level Training</li>
+        <li>Certificate After Completion</li>
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="right-section">
+    <div class="offer-box">
+      <h1>Get Flat 80% OFF on this course</h1>
+    </div>
+
+    
+    <div class="tabs">
+      <button [ngClass]="{'active-tab': selectedTab === 'personal'}" (click)="selectTab('personal')">Personal</button>
+      <button [ngClass]="{'active-tab': selectedTab === 'team'}" (click)="selectTab('team')">Team</button>
+      <div class="underline" [ngStyle]="{'transform': selectedTab === 'personal' ? 'translateX(0%)' : 'translateX(100%)'}"></div>
+    </div>
+
+    <div class="tab-content">
+      <p *ngIf="selectedTab === 'personal'">Personal plan details here.</p>
+      <p *ngIf="selectedTab === 'team'">Team plan details here.</p>
+    </div>
+
+    <div class="price-box">
+      <p><span>Original Price:</span> ${{ courseData.price }}</p>
+      <p><span>Discount Price:</span> ${{ courseData.discount }}</p>
+    </div>
+
+    <button class="buy-btn">BUY NOW</button>   
+       <div class="Money-content">
+    <h6>30-Day Money-Back <br> Gaurented full Lifetime Access</h6>
+  </div>
+
+  </div>
+
+</div>-->
