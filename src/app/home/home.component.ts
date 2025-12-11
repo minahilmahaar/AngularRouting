@@ -11,9 +11,9 @@ export class HomeComponent {
   constructor(private router: Router) {}
 
  goToCourses() {
-    //this.router.navigate(['/Courses']);
-
-this.router.navigateByUrl('Courses'); 
+    //this.router.navigate(['/courses']);
+console.log("Navigating to Courses page");
+this.router.navigateByUrl('courses'); 
  }
 
 
