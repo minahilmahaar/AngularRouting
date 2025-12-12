@@ -13,7 +13,7 @@ export class HomeComponent {
  goToCourses() {
     //this.router.navigate(['/Courses']);
 
-this.router.navigateByUrl('courses'); 
+this.router.navigateByUrl('Courses'); 
  }
 
 
