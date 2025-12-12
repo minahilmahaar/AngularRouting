@@ -32,7 +32,7 @@
                 <button class="buy-btn">BUY NOW</button>
                 <button class="detail-btn">DETAILS</button>
             </div>-->
-<button class="detail-btn" [routerLink]="['/course-detail', 'machine-learning']">
+<button class="detail-btn" [routerLink]="['/course', 'ml']">
   DETAILS
 </button>
 
@@ -45,10 +45,13 @@
         <h3>A Complete Angular Course</h3>
         <p>Master Angular framework and build dynamic web applications efficiently.</p>
         <div class="price-rating">PRICE: $599.00 | RATINGS: 4.9</div>
-        <div class="buttons">
+       <!-- <div class="buttons">
             <button class="buy-btn">BUY NOW</button>
             <button class="detail-btn">DETAILS</button>
-        </div>
+        </div>-->
+     <button class="detail-btn" [routerLink]="['/course', 'angular']">
+  DETAILS
+</button>
     </div>
 </div>
 
@@ -60,10 +63,30 @@
             <h3>A Complete React Developer Course</h3>
             <p>Build modern web apps with React, hooks, Redux, and real-world projects.</p>
             <div class="price-rating">PRICE: $599.00 | RATINGS: 4.8</div>
-            <div class="buttons">
+            <!--<div class="buttons">
                 <button class="buy-btn">BUY NOW</button>
                 <button class="detail-btn">DETAILS</button>
-            </div>
+            </div>-->
+            <button class="detail-btn" [routerLink]="['/course', 'react']">
+  DETAILS
+</button>
         </div>
     </div>
 </div>
+
+
+
+
+div class="courses-container">
+    <div class="course-card" *ngFor="let c of AllCourses">
+        <img src="https://via.placeholder.com/300x200" alt="Course Image">
+        <div class="card-content">
+            <h3>{{ c.title }}</h3>
+            <p>{{ c.desc }}</p>
+            <div class="price-rating">PRICE: ${{ c.price }}</div>
+
+            <button class="detail-btn" [routerLink]="['/course', c.id]">
+                DETAILS
+            </button>
+        </div>
+    </div>

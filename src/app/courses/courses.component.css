@@ -105,6 +105,9 @@
     }
 
     .detail-btn {
-        background-color: #e0e0e0;
+        background-color: #927878;
         color: #000;
+        } 
+    .detail-btn :hover{
+        background-color: antiquewhite;
     }

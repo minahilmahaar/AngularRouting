@@ -13,6 +13,7 @@
         <div class="course-info">
           <p><span>Duration:</span> {{ courseData.duration }}</p>
           <p><span>Lessons:</span> {{ courseData.lessons }}+</p>
+          <p><span>Author:</span> {{ courseData.Author }} Sara</p>
         </div>
 
         <h2>About This Course</h2>
@@ -25,6 +26,59 @@
           <li>Industry-Level Training</li>
           <li>Certificate After Completion</li>
         </ul>
+        
+<div class="student-reviews">
+  <h2>Student Reviews</h2>
+  <div class="reviews-wrapper">
+
+    <div class="review-card">
+      <div class="student-info">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ali Khan" class="student-img">
+        <div>
+          <h3>Ali Khan</h3>
+          <p class="rating">⭐ 5/5</p>
+        </div>
+      </div>
+      <p class="comment">Amazing course! Very easy to follow and practical. I learned so much in a short time.</p>
+    </div>
+
+    <div class="review-card">
+      <div class="student-info">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Fatima Noor" class="student-img">
+        <div>
+          <h3>Fatima Noor</h3>
+          <p class="rating">⭐ 4.5/5</p>
+        </div>
+      </div>
+      <p class="comment">Great teaching style and detailed explanations. The projects helped a lot!</p>
+    </div>
+
+   <!-- <div class="review-card">
+      <div class="student-info">
+        <img src="https://randomuser.me/api/portraits/men/56.jpg" alt="Ahmed Raza" class="student-img">
+        <div>
+          <h3>Ahmed Raza</h3>
+          <p class="rating">⭐ 5/5</p>
+        </div>
+      </div>
+      <p class="comment">Hands-on projects helped me understand concepts quickly. Highly recommended!</p>
+    </div>
+
+    <div class="review-card">
+      <div class="student-info">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sara Ali" class="student-img">
+        <div>
+          <h3>Sara Ali</h3>
+          <p class="rating">⭐ 4.8/5</p>
+        </div>
+      </div>
+      <p class="comment">Very informative course. I feel confident to start building real projects now!</p>
+    </div>-->
+<button class="Previous-btn">Previous Course</button>
+<button class="New-btn">New Course</button>
+  </div>
+</div>
+
       </div>
     </div>
 
@@ -51,77 +105,33 @@
     <p *ngIf="selectedTab === 'team'">Team plan details here.</p>
   </div>
  
-      <div class="price-box">
-        <p><span>Original Price:</span> ${{ courseData.price }}</p>
-        <p><span>Discount Price:</span> ${{ courseData.discount }}</p>
-      </div>
+     
+<div class="price-box">
+  <span class="original-price">$3199</span>
+  <span class="discount-price">${{ courseData.price }}</span>
+  <span class="discount-percent">86% OFF</span>
+</div>
 
       <button class="buy-btn">BUY NOW</button>
        <div class="Money-content">
     <h6>30-Day Money-Back <br> Gaurented full Lifetime Access</h6>
   </div>
+  <div class="course-actions">
+  <div class="gift-course">
+    🎁 Gift this course
+  </div>
+  <div class="coupon">
+    <button class="coupon-btn">Apply Coupon</button>
+  </div>
+</div>
+<div class="subscribe-section">
+  <h2>Stay Updated!</h2>
+  <p>Subscribe to our newsletter to get the latest courses, tips, and exclusive content straight to your inbox.</p>
+  <button class="subscribe-btn">Subscribe Now</button>
+</div>
+
     </div>
 
   </div>
   
 </div>
-<!--<div class="course-wrapper">
-
-  
-  <div class="left-section">
-    <div class="image-box">
-      <img [src]="courseData.img" alt="Course Image">
-    </div>
-
-    <div class="details-box">
-      <h1>{{ courseData.title }}</h1>
-
-      <div class="course-info">
-        <p><span>Duration:</span> {{ courseData.duration }}</p>
-        <p><span>Lessons:</span> {{ courseData.lessons }}+</p>
-      </div>
-
-      <h2>About This Course</h2>
-      <p>{{ courseData.description }}</p>
-
-      <h2>What You Will Learn</h2>
-      <ul>
-        <li>Basics to Advanced Concepts</li>
-        <li>Hands-on Real Projects</li>
-        <li>Industry-Level Training</li>
-        <li>Certificate After Completion</li>
-      </ul>
-    </div>
-  </div>
-
-  
-  <div class="right-section">
-    <div class="offer-box">
-      <h1>Get Flat 80% OFF on this course</h1>
-    </div>
-
-    
-    <div class="tabs">
-      <button [ngClass]="{'active-tab': selectedTab === 'personal'}" (click)="selectTab('personal')">Personal</button>
-      <button [ngClass]="{'active-tab': selectedTab === 'team'}" (click)="selectTab('team')">Team</button>
-      <div class="underline" [ngStyle]="{'transform': selectedTab === 'personal' ? 'translateX(0%)' : 'translateX(100%)'}"></div>
-    </div>
-
-    <div class="tab-content">
-      <p *ngIf="selectedTab === 'personal'">Personal plan details here.</p>
-      <p *ngIf="selectedTab === 'team'">Team plan details here.</p>
-    </div>
-
-    <div class="price-box">
-      <p><span>Original Price:</span> ${{ courseData.price }}</p>
-      <p><span>Discount Price:</span> ${{ courseData.discount }}</p>
-    </div>
-
-    <button class="buy-btn">BUY NOW</button>   
-       <div class="Money-content">
-    <h6>30-Day Money-Back <br> Gaurented full Lifetime Access</h6>
-  </div>
-
-  </div>
-
-</div>-->

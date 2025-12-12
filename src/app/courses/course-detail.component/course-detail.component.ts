@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-course-detail',
   standalone: true,
@@ -10,7 +11,6 @@ import { CommonModule } from '@angular/common';
 })
 export class CourseDetailComponent {
 selectedTab: string = 'personal';
-
 selectTab(tab: string) {
   this.selectedTab = tab;
 }
@@ -48,7 +48,7 @@ selectTab(tab: string) {
     },
     ml: {
       title: 'Machine Learning Complete Course',
-      img: 'https://media.istockphoto.com/id/966248982/photo/robot-with-education-hud.jpg',
+      img: 'https://media.istockphoto.com/id/966248982/photo/robot-with-education-hud.jpg?s=612x612&w=0&k=20&c=9eoZYRXNZsuU3edU87PksxN4Us-c9rB6IR7U_IGZ-U8=',
       price: 699,
       discount: 199,
       description: 'Learn machine learning models, AI, training, data processing.',
