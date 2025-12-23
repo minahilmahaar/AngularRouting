@@ -10,10 +10,18 @@
       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
     </p>
-    <div class="search-bar">
-      <input type="text" placeholder="Search Courses">
-      <button>Search Courses</button>
-    </div>
+   <div class="search-bar">
+  <input type="text" placeholder="Search Courses" #searchVar>
+
+ <!-- <button class="search-btn"
+          [routerLink]="['/courses']"
+          [queryParams]="{ search: searchVar.value }">
+    Search Courses
+  </button>
+-->
+  <button class="search-btn"  (click)="OnSearchClicked(searchVar.value)">Search Courses</button>
+</div>
+
   </div>
 </div>
 
@@ -22,7 +30,7 @@
 
   <div class="card3">
     <h1>Popular Cases</h1>
-   
+   <p class="populer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia illo a est voluptatibus accusamus harum odio veniam ipsum facere esse, ullam nam, in ratione perspiciatis delectus corrupti eligendi aliquid. Voluptatum sit amet consectetur adipisicing elit. Officia illo a est voluptatibus accusamus harum odio veniam ipsum facere esse, ullam nam, in ratione perspiciatis delectus corrupti eligendi aliquid. Voluptatum. sit amet consectetur adipisicing elit. Officia illo a est voluptatibus accusamus harum odio veniam ipsum facere esse, ullam nam, in ratione perspiciatis delectus corrupti eligendi aliquid. Voluptatum..</p>
 <div class="cards-container">
   <div class="card">
     <!--<img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript">-->

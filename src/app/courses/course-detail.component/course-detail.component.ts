@@ -18,8 +18,10 @@ selectTab(tab: string) {
   courseId: any;
   courseData: any;
 
-  courses = {
-    javascript: {
+  courses = [
+     {
+      name:'Java Script',
+      id:1,
       title: 'Complete Modern JavaScript Course',
       img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsXw0ibKF5hUXjyRn1YttR5fzrCtkrefYkCQ&s',
       price: 499,
@@ -28,7 +30,9 @@ selectTab(tab: string) {
       duration: '3 Months',
       lessons: 120
     },
-    angular: {
+    {
+      name:'angular',
+      id:2,
       title: 'A Complete Angular Course',
       img: 'https://ict-trainings.com/storage/app/public/course/banner_5c88b1428edb1.jpg',
       price: 599,
@@ -37,7 +41,9 @@ selectTab(tab: string) {
       duration: '3 Months',
       lessons: 140
     },
-    react: {
+    {
+      name:'React',
+      id:3,
       title: 'A Complete React Developer Course',
       img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwaT6o4D4RZNrFYmuLMri9KtVb-QCp-K6zDA&s',
       price: 599,
@@ -46,7 +52,9 @@ selectTab(tab: string) {
       duration: '2.5 Months',
       lessons: 110
     },
-    ml: {
+    {
+      name:'Machine Learning',
+      id:4,
       title: 'Machine Learning Complete Course',
       img: 'https://media.istockphoto.com/id/966248982/photo/robot-with-education-hud.jpg?s=612x612&w=0&k=20&c=9eoZYRXNZsuU3edU87PksxN4Us-c9rB6IR7U_IGZ-U8=',
       price: 699,
@@ -55,12 +63,14 @@ selectTab(tab: string) {
       duration: '4 Months',
       lessons: 160
     }
-  };
+  ];
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
+      console.log('hello');
     this.courseId = this.route.snapshot.paramMap.get('id');
-    this.courseData = this.courses[this.courseId];
+    this.courseData = this.courses.filter(x=>x.id==this.courseId);
+    console.log(this.courseData);
   }
 }

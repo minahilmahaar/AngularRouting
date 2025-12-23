@@ -2,18 +2,19 @@
   <div class="course-wrapper">
 
  
-    <div class="left-section">
-      <div class="image-box">
-        <img [src]="courseData.img" alt="Course Image">
-      </div>
+    <div class="left-section" *ngFor="let c of courseData">
+  <div class="image-box">
+      <img [src]="c.img" alt="Course Image">
+         
+     </div>
 
       <div class="details-box">
-        <h1>{{ courseData.title }}</h1>
+        <h1>{{ c.title }}</h1>
 
         <div class="course-info">
-          <p><span>Duration:</span> {{ courseData.duration }}</p>
-          <p><span>Lessons:</span> {{ courseData.lessons }}+</p>
-          <p><span>Author:</span> {{ courseData.Author }} Sara</p>
+          <p><span>Duration:</span> {{ c.duration }}</p>
+          <p><span>Lessons:</span> {{ c.lessons }}+</p>
+          <p><span>Author:</span> {{ c.Author }}</p>
         </div>
 
         <h2>About This Course</h2>
@@ -53,27 +54,6 @@
       <p class="comment">Great teaching style and detailed explanations. The projects helped a lot!</p>
     </div>
 
-   <!-- <div class="review-card">
-      <div class="student-info">
-        <img src="https://randomuser.me/api/portraits/men/56.jpg" alt="Ahmed Raza" class="student-img">
-        <div>
-          <h3>Ahmed Raza</h3>
-          <p class="rating">⭐ 5/5</p>
-        </div>
-      </div>
-      <p class="comment">Hands-on projects helped me understand concepts quickly. Highly recommended!</p>
-    </div>
-
-    <div class="review-card">
-      <div class="student-info">
-        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sara Ali" class="student-img">
-        <div>
-          <h3>Sara Ali</h3>
-          <p class="rating">⭐ 4.8/5</p>
-        </div>
-      </div>
-      <p class="comment">Very informative course. I feel confident to start building real projects now!</p>
-    </div>-->
 <button class="Previous-btn">Previous Course</button>
 <button class="New-btn">New Course</button>
   </div>

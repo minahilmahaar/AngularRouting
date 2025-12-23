@@ -1,15 +1,6 @@
 /* You can ad@import"-../node-module/bootstrap/dist/css/bootstrap.min.css"d global styles to this file, and also import other style files */
 @import "bootstrap/dist/css/bootstrap.min.css";
-/* 
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
-body{
-    font-family: 'Courier New', Courier, monospace;
-    background-color: aliceblue;
-} */
+
 .active{
     font-size: 18px;
     font-weight: bold;

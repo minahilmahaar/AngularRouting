@@ -1,0 +1,89 @@
+<div class="buy-page-container">
+
+  <div class="payment-info">
+    <h2>Payment Information</h2>
+
+    <form>
+
+      <label>Full Name</label>
+      <input
+        type="text"
+        placeholder="Full Name"
+        [(ngModel)]="payment.fullName"
+        name="fullName">
+
+    
+      <label>Card Number</label>
+      <input
+        type="text"
+        placeholder="1111-2222-3333-4444"
+        [(ngModel)]="payment.cardNumber"
+        name="cardNumber">
+<div class="mon-year">
+  <label>Expiries on: </label>
+      <div class="expiry-cvv">
+
+        <div class="expiry-group">
+          <label>Month</label>
+          <select [(ngModel)]="payment.expMonth" name="expMonth">
+            <option value="" disabled selected>MM</option>
+            <option *ngFor="let m of months">{{ m }}</option>
+          </select>
+        </div>
+
+        <div class="expiry-group">
+          <label>Year</label>
+          <select [(ngModel)]="payment.expYear" name="expYear">
+            <option value="" disabled selected>YYYY</option>
+            <option *ngFor="let y of years">{{ y }}</option>
+          </select>
+        </div>
+</div>
+        <div class="cvv-group">
+           <label>CVV</label>
+          <input type="text"placeholder="415" [(ngModel)]="payment.cvv"name="cvv">
+          <a class="cvv-info">What is CVV?</a>
+        </div>
+
+      </div>
+
+      <button type="button" class="buy-now-btn" (click)="submitPayment()">
+        🔒 Buy Now
+      </button>
+
+    </form>
+  </div>
+
+
+  <div class="order-summary">
+    <h2>{{ course?.title }}</h2>
+
+    <div class="summary-row">
+      <span>{{ course?.price | number:'1.2-2' }} x 1 Course</span>
+      <span>{{ course?.price | number:'1.2-2' }} USD</span>
+    </div>
+
+    <div class="summary-row">
+      <span>Discount</span>
+      <span>0.00 USD</span>
+    </div>
+
+    <div class="summary-row">
+      <span>Subtotal</span>
+      <span>{{ course?.price | number:'1.2-2' }} USD</span>
+    </div>
+
+    <div class="summary-row">
+      <span>Tax</span>
+      <span>{{ tax | number:'1.2-2' }} USD</span>
+    </div>
+
+    <hr>
+
+    <div class="summary-row total">
+      <span>Total</span>
+      <span>{{ total | number:'1.2-2' }} USD</span>
+    </div>
+  </div>
+
+</div>

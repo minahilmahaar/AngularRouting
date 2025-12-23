@@ -18,6 +18,7 @@
 .home-content h1 {
   font-size: 28px;
   margin-bottom: 20px;
+  color: #ccc;
 }
 
 .home-content p {
@@ -30,6 +31,7 @@
 .search-bar {
   display: flex;
   width: 100%;
+  gap: 15px;
 }
 
 .search-bar input {
@@ -39,9 +41,13 @@
   border-radius: 4px 0 0 4px;
   outline: none;
   font-size: 16px;
+  
+}
+.populer{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.search-bar button {
+.search-btn {
   padding: 10px 20px;
   border: none;
   background-color: #ff5722;
@@ -51,7 +57,7 @@
   font-size: 16px;
 }
 
-.search-bar button:hover {
+.search-btn :hover {
   background-color: #e64a19;
 }
 .customer{

@@ -1,9 +1,24 @@
 <header class="nav">
- <div class="logo">procademy</div>
- <nav>
-  <a routerLink="/home" [routerLinkActive]="'active'">Home</a>
-  <a routerLink="/about" [routerLinkActive]="'active'">About</a>
-  <a routerLink="/contact" [routerLinkActive]="'active'">Contact</a>
-  <a routerLink="/courses" [routerLinkActive]="'active'">Courses</a>
- </nav>
+  <div class="logo">procademy</div>
+  <nav>
+    <a routerLink="/home" routerLinkActive="active">Home</a>
+    <a routerLink="/about" routerLinkActive="active">About</a>
+    <a routerLink="/contact" routerLinkActive="active">Contact</a>
+    <a routerLink="/courses" routerLinkActive="active">Courses</a>
+
+   
+    
+   <!-- <div class="auth">
+      <a *ngIf="!authService.isLoggedIn()" (click)="openLogin()">LOGIN</a>
+      <a *ngIf="authService.isLoggedIn()" (click)="logout()">LOGOUT</a>
+    </div>
+    <app-login *ngIf="showLoginModal" (close)="closeLogin()"></app-login>-->
+ 
+  </nav>
+  <a *ngIf="!authService.isLoggedIn()" (click)="openLogin()">Login</a>
+ <app-login
+    *ngIf="showLoginModal"
+    (close)="closeLogin()">
+  </app-login>
+ <a routerLink="/logout" [queryParams]="{logout: true}">LOGOUT</a>
 </header>

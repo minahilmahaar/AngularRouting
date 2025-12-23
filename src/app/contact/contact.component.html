@@ -16,13 +16,13 @@
     <form>
 
       <label>First Name</label>
-      <input type="text" placeholder="Your name..">
+      <input type="text" placeholder="Your name.." [(ngModel)]="firstName" name="firstname">
 
       <label>Last Name</label>
-      <input type="text" placeholder="Your last name..">
+      <input type="text" placeholder="Your last name.." [(ngModel)]="lastName" name="lastname">
 
       <label>Country</label>
-      <select>
+      <select id="country" name="country" [(ngModel)]="country" name="country">
         <option>Australia</option>
         <option>Canada</option>
         <option>Pakistan</option>
@@ -30,9 +30,9 @@
       </select>
 
       <label>Subject</label>
-      <textarea placeholder="Write something.."></textarea>
+      <textarea placeholder="Write something.." [(ngModel)]="message" name="message"></textarea>
 
-      <button type="submit" class="submit-btn">Submit</button>
+      <button type="submit" class="submit-btn" (click)="OnSubmit()">Submit</button>
 
     </form>
 
