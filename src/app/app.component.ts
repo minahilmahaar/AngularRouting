@@ -1,5 +1,12 @@
-import { Component, inject, OnInit,  } from '@angular/core';
-import { NavigationEnd, NavigationStart, Router, RouterOutlet } from '@angular/router';
+import { Component, inject, OnInit } from '@angular/core';
+import {
+  NavigationCancel,
+  NavigationEnd,
+  NavigationError,
+  NavigationStart,
+  Router,
+  RouterOutlet
+} from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { CommonModule } from '@angular/common';
@@ -11,7 +18,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent  implements OnInit {
+export class AppComponent implements OnInit {
 
   showloader: boolean = false;
   router = inject(Router);
@@ -19,14 +26,16 @@ export class AppComponent  implements OnInit {
   ngOnInit() {
     this.router.events.subscribe(event => {
 
-      
       if (event instanceof NavigationStart) {
         if (event.url.includes('courses')) {
           this.showloader = true;
         }
       }
-      if (event instanceof NavigationEnd) {
-        if (event.url.includes('courses')) {
+
+      if (event instanceof NavigationEnd || event instanceof NavigationCancel
+        || event instanceof NavigationError
+      ) {
+        if (event instanceof NavigationEnd && event.url.includes('courses')) {
           setTimeout(() => {
             this.showloader = false;
           }, 3000); 
@@ -38,4 +47,3 @@ export class AppComponent  implements OnInit {
     });
   }
 }
-

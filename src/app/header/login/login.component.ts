@@ -2,6 +2,7 @@ import { Component, ElementRef, inject, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -15,8 +16,9 @@ export class LoginComponent {
   @ViewChild('username') username!: ElementRef;
   @ViewChild('password') password!: ElementRef;
 
-
   router: Router = inject(Router);
+  authService: AuthService = inject(AuthService);
+
   showPassword = false;
   rememberMe = false;
   showModal = true;
@@ -41,35 +43,39 @@ export class LoginComponent {
     this.showModal = false;
   }
 
-login() {
-  const enteredUsername = this.username.nativeElement.value.trim();
-  const enteredPassword = this.password.nativeElement.value.trim();
+  login() {
+    const enteredUsername = this.username.nativeElement.value.trim();
+    const enteredPassword = this.password.nativeElement.value.trim();
 
-  if (!enteredUsername || !enteredPassword) {
-    alert('The login credentials you entered are not correct.');
-    return;
-  }
-
-  const matchedUser = this.users.find(
-    user => user.username === enteredUsername && user.password === enteredPassword
-  );
-
-  if (matchedUser) {
-    if (this.rememberMe) {
-      localStorage.setItem('rememberUser', enteredUsername);
+    if (!enteredUsername || !enteredPassword) {
+      alert('Please enter username and password.');
+      return;
     }
 
-    
-    alert(`Welcome ${matchedUser.username}! You are logged in.`);
+    const matchedUser = this.users.find(
+      user => user.username === enteredUsername && user.password === enteredPassword
+    );
 
-    this.closeModal();
-    this.router.navigate(['/buy']);  
-   } else {
-    alert('The login credentials you entered are not correct.');
-  
+    if (matchedUser) {
+
+      if (this.rememberMe) {
+        localStorage.setItem('rememberUser', enteredUsername);
+      }
+
+      this.authService.showLoader();
+
+      setTimeout(() => {
+
+        this.authService.hideLoader();
+
+        alert(`Welcome ${matchedUser.username}! You are logged in.`);
+
+        this.closeModal();
+        this.router.navigate(['/buy']);  
+
+      }, 3000); 
+    } else {
+      alert('Invalid credentials.');
+    }
   }
 }
-
-}
-
-

@@ -30,9 +30,6 @@ showLoginModal = false;
     this.showLoginModal = false;
   }
 
-  logout() {
-    this.authService.logout();
-  }
   
 
 }

@@ -1,4 +1,4 @@
-<div class="overlay">
+<!--<div class="overlay">
   <div class="login-box">
 
     <h2>Please Login Here</h2>
@@ -24,4 +24,32 @@
    
 
   </div>
+</div>-->
+<div class="overlay">
+  <div class="login-box">
+
+    <h2>Please Login Here</h2>
+
+    <label class="input-label">Username</label>
+    <input type="Username" placeholder="Username" #username>
+
+    <label class="input-label">Password</label>
+    <div class="password-container">
+      <input [type]="showPassword ? 'text' : 'password'" placeholder="Password" #password>
+      <span class="eye-icon" (click)="togglePassword()">👁</span>
+    </div>
+
+    <button (click)="login()">Login</button>
+
+    <div class="remember-container">
+      <input type="checkbox" id="remember" [(ngModel)]="rememberMe">
+      <label for="remember">Remember me</label>
+    </div>
+
+  </div>
+
+  <div class="loader-overlay" *ngIf="authService.loader$ | async">
+    <div class="spinner"></div>
+  </div>
+
 </div>

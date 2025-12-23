@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CourseService, Course } from '../../services/course.service';
 import { CommonModule } from '@angular/common';
@@ -30,7 +30,6 @@ export class CourseBuyComponent implements OnInit {
   constructor(private route: ActivatedRoute, private courseService: CourseService) { }
 
   ngOnInit(): void {
-   
     const currentYear = new Date().getFullYear();
     for(let i = 0; i < 10; i++) {
       this.years.push(currentYear + i);

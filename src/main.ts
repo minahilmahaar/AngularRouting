@@ -7,6 +7,7 @@ import { CourseBuyComponent } from './app/courses/course-buy.component/course-bu
 import { LoginComponent } from './app/header/login/login.component';
 import { AuthGaurdService } from './app/services/authgaurd.service';
 import { CanActivate, CanActivateChild } from './app/auth.guard';
+import { PristineChangeEvent } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -52,7 +53,7 @@ const routes: Routes = [
   },
 ]},
  { path: 'course/:id', component: CourseDetailComponent },
-    { path: 'course-buy/:id', component: CourseBuyComponent },
+    { path: 'course-buy/:id', component: CourseBuyComponent},
 
 
     { path: 'Login', component:LoginComponent},
